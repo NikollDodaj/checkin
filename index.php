@@ -5,6 +5,20 @@
 <link href="theme.css" rel="stylesheet">
 <script src="search.js"></script>
 <script src="jquery-3.3.1.min.js"></script>
+  <script>
+var index, table = document.getElementById('myTable');
+for(var i=0;i<table.rows.length;i++)
+{
+
+	table.rows[i].cells[0].onclick = function()
+	{
+		index=this.parentElement.rowIndex;
+		table.deleteRow(index);
+		console.log(index);
+	};
+
+}
+</script>
 <script>
   $(document).ready(function(){
    
