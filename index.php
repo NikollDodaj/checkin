@@ -22,9 +22,6 @@
   <?php
   require_once "list.php";
   ?>
-  <tr>
-  <td colspan="3" style="text-align:center;color:white;background-color:orange"><?php echo $count." guest in the list!"; ?></td>
-  </tr>
 </table>
 </div>
 <div class="count" style="background-color:orange; color: white;padding: 15px 32px;text-align: center;font-size: 16px;width:1100px">
