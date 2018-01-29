@@ -22,24 +22,44 @@
   <?php
   require_once "list.php";
   ?>
+  
 </table>
 </div>
 <div class="count" style="background-color:orange; color: white;padding: 15px 32px;text-align: center;font-size: 16px;width:1100px">
   <?php echo $count." guest in the list!"; ?>
 </div>
 <script>
-var index, table = document.getElementById('myTable');
-for(var i=0;i<table.rows.length;i++)
-{
+$(document).ready(function(){
 
-	table.rows[i].cells[2].onclick = function()
-	{
-		index=this.parentElement.rowIndex;
-		table.deleteRow(index);
-		console.log(index);
-	};
+ // Check 
+ $('.delete').click(function(){
+  var el = this;
+  var id = this.id;
+  var splitid = id.split("_");
 
-}
+  
+  var deleteid = splitid[1];
+ 
+  // AJAX Request
+  $.ajax({
+   url: 'checkin.php',
+   type: 'POST',
+   data: { id:deleteid },
+   success: function(response){
+
+    // Removing row from HTML Table
+    $(el).closest('tr').css('background','#ADED8C');
+    $(el).closest('tr').fadeOut(800, function(){ 
+     $(this).remove();
+    });
+
+   }
+
+  });
+
+ });
+
+});
 </script>
 </body>
 </html>
