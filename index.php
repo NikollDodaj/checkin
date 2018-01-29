@@ -28,6 +28,20 @@
 <div class="count" style="background-color:orange; color: white;padding: 15px 32px;text-align: center;font-size: 16px;width:1100px">
   <?php echo $count." guest in the list!"; ?>
 </div>
+  
+  
+   <!--Pagination-->
+    
+     
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"> </script>
+  <script src="https://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css">
+    <script type="text/javascript">
+             $(document).ready(function () {
+                 $('#hosts').dataTable();
+             });
+ 
+</script>
 <script>
 $(document).ready(function(){
 
